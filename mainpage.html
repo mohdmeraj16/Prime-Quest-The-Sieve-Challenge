@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Quest - Main Menu</title>
+    <link rel="stylesheet" href="mainstyle.css">
+</head>
+<body>
+    <div class="main-container">
+        <h1 class="game-title">Prime Quest</h1>
+        <p>Welcome to Prime Quest! Choose your level to start the adventure.</p>
+        <div class="level-selection">
+            <label for="level">Select Level:</label>
+            <select id="level">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
+        <a href="index.html" id="startButton"><button class="start-button">Start Game</button></a>
+    </div>
+    <script>
+        // Store the selected level in local storage before navigating to the game page
+        document.getElementById('startButton').onclick = function() {
+            const selectedLevel = document.getElementById('level').value;
+            localStorage.setItem('selectedLevel', selectedLevel);
+        };
+    </script>
+</body>
+</html>
